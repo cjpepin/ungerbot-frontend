@@ -1,0 +1,36 @@
+<div class="form">
+  <span>Username: admin</span>
+  <span>Pass: admin</span>
+  <span>This is a stripped down, frontend only version of the original Ungerbot.</span>
+  <span>To read more about the original version, please visit <a href="https://connorjpepin.com">THIS</a> link</span>
+  <br/>
+  
+  <p class="log-in-title"> Log In: </p>
+  <span class="error">{{error}}</span>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>UserID</mat-label>
+    <input #username matInput (keyup.enter)="validateUser(username.value, password.value)">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input #password type="password" matInput (keyup.enter)="validateUser(username.value, password.value)">
+  </mat-form-field>
+
+
+
+  <button mat-raised-button
+          color="primary"
+          (click)="validateUser(username.value, password.value)">
+    Login
+  </button>
+  <button mat-raised-button
+          color="primary"
+          routerLink="/create-account">
+    Create Account
+  </button>
+  <button mat-raised-button
+          color="primary"
+          (click)="validateUser('guest', '')">
+    Guest Access
+  </button>
+</div>
